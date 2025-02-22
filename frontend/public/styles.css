@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #4CAF50;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px;
+    background: url('https://source.unsplash.com/1600x900/?farm,agriculture') no-repeat center center/cover;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+section {
+    padding: 30px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #4CAF50;
+    color: white;
+}
+
+
+/* Tailwind's base styles */
+@tailwind base;
+
+/* Tailwind's component styles */
+@tailwind components;
+
+/* Tailwind's utility classes */
+@tailwind utilities;
+
+/* Custom styles (optional) */
+
+/* Example custom font for the app */
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Example custom color for heading */
+h1 {
+  color: #2b6cb0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Custom background for the body */
+body {
+  background-color: #f7fafc;
+}
+
+/* Add spacing to containers */
+.container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Custom utility for text shadow (optional) */
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom Tailwind classes for card components */
+.card {
+  @apply bg-white rounded-lg shadow-lg p-6;
+}
+
+/* Custom button with Tailwind classes */
+.button-primary {
+  @apply bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition-colors duration-300;
+}
+
+/* Custom container for sections */
+.section-container {
+  @apply mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Custom text styling for paragraphs */
+p {
+  @apply text-gray-700 leading-relaxed;
+}
+
+/* Custom spacing for lists */
+ul {
+  @apply list-disc pl-6;
+}
