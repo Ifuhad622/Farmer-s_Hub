@@ -1,85 +1,112 @@
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Default font for the application */
 }
 
 body {
-    background-color: #f8f9fa;
-    color: #333;
-    line-height: 1.6;
+    background-color: #f8f9fa; /* Light background color */
+    color: #333; /* Dark text color */
+    line-height: 1.6; /* Improve readability */
 }
 
+/* Header and Navigation */
 header {
-    background: #4CAF50;
-    color: white;
-    padding: 15px 0;
-    text-align: center;
+    background: #4CAF50; /* Header background color */
+    color: white; /* Header text color */
+    padding: 15px 0; /* Padding for header */
+    text-align: center; /* Center header text */
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+    display: flex; /* Flexbox for navigation */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center items vertically */
+    padding: 0 20px; /* Padding for navigation */
 }
 
 nav .logo {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 24px; /* Logo font size */
+    font-weight: bold; /* Logo font weight */
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
+    list-style: none; /* Remove default list styles */
+    display: flex; /* Horizontal layout for links */
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 20px; /* Space between links */
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Link font size */
 }
 
+/* Hero Section */
 .hero {
-    text-align: center;
-    padding: 50px;
-    background: url('https://source.unsplash.com/1600x900/?farm,agriculture') no-repeat center center/cover;
-    color: white;
+    text-align: center; /* Center text in hero */
+    padding: 50px; /* Padding for hero */
+    background: url('https://source.unsplash.com/1600x900/?farm,agriculture') no-repeat center center/cover; /* Background image */
+    color: white; /* Text color */
+    position: relative; /* Create a positioning context for child elements */
+    width: 100%; /* Full width */
+    height: 400px; /* Fixed height */
 }
 
 .hero h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 36px; /* Hero heading font size */
+    margin-bottom: 20px; /* Space below heading */
 }
 
+/* Buttons */
 .btn {
-    display: inline-block;
-    background: #ff9800;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+    display: inline-block; /* Inline block for button */
+    background: #ff9800; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Space above button */
 }
 
+.hero-btn {
+    position: absolute; /* Position button on top of the image */
+    bottom: 20px; /* Distance from bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for exact centering */
+    padding: 10px 20px; /* Button padding */
+    background-color: #4CAF50; /* Button color */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.2rem; /* Font size */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Shadow for visibility */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.hero-btn:hover {
+    background-color: #45a049; /* Darken button color on hover */
+}
+
+/* Section Styles */
 section {
-    padding: 30px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
+    padding: 30px; /* Padding for sections */
+    text-align: center; /* Center text */
+    border-bottom: 1px solid #ddd; /* Bottom border */
 }
 
+/* Footer Styles */
 footer {
-    text-align: center;
-    padding: 10px;
-    background: #4CAF50;
-    color: white;
+    text-align: center; /* Center footer text */
+    padding: 10px; /* Padding for footer */
+    background: #4CAF50; /* Footer background color */
+    color: white; /* Footer text color */
 }
-
 
 /* Tailwind's base styles */
 @tailwind base;
@@ -92,56 +119,64 @@ footer {
 
 /* Custom styles (optional) */
 
-/* Example custom font for the app */
-body {
-  font-family: 'Arial', sans-serif;
-}
-
 /* Example custom color for heading */
 h1 {
-  color: #2b6cb0;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* Custom background for the body */
-body {
-  background-color: #f7fafc;
+    color: #2b6cb0; /* Custom color for h1 */
+    font-size: 2.5rem; /* Custom font size for h1 */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center h1 text */
 }
 
 /* Add spacing to containers */
 .container {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+    margin-top: 2rem; /* Top margin for containers */
+    margin-bottom: 2rem; /* Bottom margin for containers */
 }
 
 /* Custom utility for text shadow (optional) */
 .text-shadow {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Text shadow effect */
 }
 
 /* Custom Tailwind classes for card components */
 .card {
-  @apply bg-white rounded-lg shadow-lg p-6;
+    @apply bg-white rounded-lg shadow-lg p-6; /* Tailwind utility classes */
 }
 
 /* Custom button with Tailwind classes */
 .button-primary {
-  @apply bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition-colors duration-300;
+    @apply bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition-colors duration-300; /* Tailwind utility classes */
 }
 
 /* Custom container for sections */
 .section-container {
-  @apply mx-auto px-4 sm:px-6 lg:px-8;
+    @apply mx-auto px-4 sm:px-6 lg:px-8; /* Tailwind utility classes */
 }
 
 /* Custom text styling for paragraphs */
 p {
-  @apply text-gray-700 leading-relaxed;
+    @apply text-gray-700 leading-relaxed; /* Tailwind utility classes */
 }
 
 /* Custom spacing for lists */
 ul {
-  @apply list-disc pl-6;
+    @apply list-disc pl-6; /* Tailwind utility classes */
+}
+
+/* Hero Text and Image */
+.hero-image {
+    width: 100%; /* Full width for hero image */
+    height: 100%; /* Full height for hero image */
+    object-fit: cover; /* Ensure the image covers the container */
+}
+
+.hero-text {
+    position: absolute; /* Position the text on top of the image */
+    top: 50%; /* Center the text vertically */
+    left: 50%; /* Center the text horizontally */
+    transform: translate(-50%, -50%); /* Adjust for exact centering */
+    color: white; /* White text for contrast */
+    font-size: 3rem; /* Adjust text size */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Optional: Add a shadow for better visibility */
+    text-align: center; /* Center the text */
 }

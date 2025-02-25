@@ -1,0 +1,86 @@
+/* Register.css */
+
+/* Container for the registration form */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f7f7f7; /* Light background color */
+}
+
+/* Styling for the registration form */
+.register-form {
+    background-color: white; /* White background for the form */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 300px; /* Fixed width for the form */
+}
+
+/* Heading style */
+.register-form h2 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Grouping form elements */
+.form-group {
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+/* Label styling */
+.form-group label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below the label */
+    font-weight: bold; /* Bold text for labels */
+}
+
+/* Input field styling */
+.form-group input {
+    width: 100%; /* Full width input */
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+}
+
+/* Error message styling */
+.error-message {
+    color: red; /* Red color for error messages */
+    font-size: 14px; /* Font size for error messages */
+    margin-bottom: 10px; /* Space below error messages */
+}
+
+/* Button styling */
+.register-button {
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding inside the button */
+    background-color: #007bff; /* Primary color */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Button hover effect */
+.register-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Link styling */
+.signup-link {
+    text-align: center; /* Center the link */
+    margin-top: 10px; /* Space above the link */
+}
+
+.signup-link a {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* No underline */
+}
+
+.signup-link a:hover {
+    text-decoration: underline; /* Underline on hover */
+}

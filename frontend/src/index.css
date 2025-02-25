@@ -1,0 +1,98 @@
+/* index.css */
+
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a default font for the application */
+body {
+    font-family: Arial, sans-serif; /* You can change this to your preferred font */
+    line-height: 1.6; /* Improve readability */
+    background-color: #f4f4f4; /* Light background color */
+    color: #333; /* Dark text color */
+}
+
+/* Container for main content */
+.container {
+    max-width: 1200px; /* Maximum width for the container */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Padding around the content */
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #007bff; /* Navbar background color */
+    color: white; /* Navbar text color */
+    padding: 10px 20px; /* Padding for the navbar */
+}
+
+.nav-content {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center items vertically */
+}
+
+.nav-links {
+    list-style: none; /* Remove default list styles */
+    display: flex; /* Horizontal layout for links */
+}
+
+.nav-links li {
+    margin-left: 20px; /* Space between links */
+}
+
+.nav-links a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Add hover effect for links */
+.nav-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Footer styles */
+footer {
+    text-align: center; /* Center the footer text */
+    padding: 20px; /* Padding for the footer */
+    background-color: #007bff; /* Footer background color */
+    color: white; /* Footer text color */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column; /* Stack links vertically on small screens */
+        display: none; /* Hide links by default */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger button */
+    }
+}
+
+.hamburger {
+    display: none; /* Hide hamburger button by default */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Styles for the hamburger menu bars */
+.bar {
+    display: block; /* Each bar is a block */
+    width: 25px; /* Width of the bars */
+    height: 3px; /* Height of the bars */
+    margin: 5px auto; /* Space between bars */
+    background-color: white; /* Color of the bars */
+    transition: all 0.3s; /* Smooth transition for animations */
+}
+
+.bar.active {
+    background-color: #ffcc00; /* Change color when active */
+}

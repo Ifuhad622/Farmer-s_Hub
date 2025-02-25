@@ -1,4 +1,5 @@
 import React from 'react';
+import './Home.css';
 
 const Home = () => {
   const features = [
@@ -12,9 +13,22 @@ const Home = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-center text-green-700 mb-8 animate-bounce">
-        Welcome to Farmer's Hub
-      </h1>
+      <section className="hero">
+        <img 
+          src="/images/hero-image.jpg"
+          alt="Hero" 
+          className="hero-image"
+          onError={(e) => {
+            console.error('Image failed to load');
+            e.target.style.display = 'none';
+          }}
+        />
+        <div className="hero-content">
+          <h1 className="hero-text">Welcome to Farmer's Hub</h1>
+          <p>Your all-in-one platform for farming insights, tools, and community support.</p>
+          <a href="#shop" className="btn hero-btn">Visit Marketplace</a>
+        </div>
+      </section>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((feature, index) => (
           <div
