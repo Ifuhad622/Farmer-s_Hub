@@ -1,14 +1,13 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
+// Middleware to protect routes
 exports.protect = async (req, res, next) => {
     try {
         let token;
 
         // Check for token in Authorization header
-        if (req.headers.authorization && 
-            req.headers.authorization.startsWith('Bearer')
-        ) {
+        if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
             token = req.headers.authorization.split(' ')[1];
         }
         // Check for token in cookies (optional)
@@ -16,6 +15,7 @@ exports.protect = async (req, res, next) => {
             token = req.cookies.token;
         }
 
+        // If no token is found, return an error
         if (!token) {
             return res.status(401).json({
                 success: false,
@@ -30,6 +30,7 @@ exports.protect = async (req, res, next) => {
             // Get user from token and exclude password
             const user = await User.findById(decoded.id).select('-password');
 
+            // If user is not found, return an error
             if (!user) {
                 return res.status(401).json({
                     success: false,
@@ -50,6 +51,7 @@ exports.protect = async (req, res, next) => {
             next();
 
         } catch (error) {
+            // Handle token errors
             if (error.name === 'JsonWebTokenError') {
                 return res.status(401).json({
                     success: false,
@@ -62,7 +64,7 @@ exports.protect = async (req, res, next) => {
                     message: 'Token expired'
                 });
             }
-            throw error;
+            throw error; // Rethrow unexpected errors
         }
     } catch (error) {
         return res.status(500).json({
@@ -73,6 +75,7 @@ exports.protect = async (req, res, next) => {
     }
 };
 
+// Middleware to authorize user roles
 exports.authorize = (...roles) => {
     return (req, res, next) => {
         if (!req.user) {
@@ -92,7 +95,7 @@ exports.authorize = (...roles) => {
     };
 };
 
-// Optional: Middleware to check if user owns the resource
+// Middleware to check if user owns the resource
 exports.checkOwnership = (model) => async (req, res, next) => {
     try {
         const resource = await model.findById(req.params.id);
@@ -106,7 +109,7 @@ exports.checkOwnership = (model) => async (req, res, next) => {
 
         // Check if the resource has a user/author/seller field and if it matches the current user
         const ownerId = resource.user || resource.author || resource.seller;
-        
+
         if (ownerId.toString() !== req.user.id && req.user.role !== 'admin') {
             return res.status(403).json({
                 success: false,
@@ -125,18 +128,25 @@ exports.checkOwnership = (model) => async (req, res, next) => {
     }
 };
 
-// Optional: Rate limiting middleware
+// Rate limiting middleware
 exports.rateLimit = (limit, minutes) => {
     const requests = new Map();
-    
+
     return (req, res, next) => {
+        if (!req.user) {
+            return res.status(401).json({
+                success: false,
+                message: 'User not authenticated'
+            });
+        }
+
         const userId = req.user.id;
         const now = Date.now();
-        
+
         if (requests.has(userId)) {
             const userData = requests.get(userId);
             const timeDiff = now - userData.timestamp;
-            
+
             if (timeDiff < minutes * 60 * 1000) {
                 if (userData.count >= limit) {
                     return res.status(429).json({
